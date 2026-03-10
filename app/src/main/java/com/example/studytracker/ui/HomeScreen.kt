@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.matchParentSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -177,14 +176,13 @@ private fun ProgressOrb(
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(contentAlignment = Alignment.Center, modifier = Modifier.size(orbSize)) {
             Canvas(
-                modifier = Modifier
-                    .matchParentSize()
+                modifier = matchParentSize()
                     .blur(8.dp)
             ) {
                 drawCircle(color = glowColor.copy(alpha = 0.12f))
             }
 
-            Canvas(modifier = Modifier.matchParentSize()) {
+            Canvas(modifier = matchParentSize()) {
                 val stroke = 8.dp.toPx()
                 drawArc(
                     color = Color.White.copy(alpha = 0.08f),
